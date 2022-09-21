@@ -24,7 +24,11 @@
         <div class="logo">
           <a class="navbar-brand" href="#">
             <%#= fa_stacked_icon "camera inverse", base: "circle"%>
-            <%= link_to "Instagram", root_path, class: "navbar-brand"  %>
+              <span class="fa-stack fa-1x">
+                <i class="fa-solid fa-circle fa-stack-2x"></i>
+                <i class="fa-solid fa-camera fa-stack-1x fa-inverse"></i>
+              </span>
+              <%= link_to "Instagram", root_path, class: "navbar-brand"  %>
           </a>
         </div>
         <div class="m-auto">
@@ -70,7 +74,7 @@
           <li>HASHTAGS</li>
           <li>LANGUAGE</li>
         </ul>
-        <p> © 2018 INSTAGRAM </p>
+        <p> © 2022 INSTAGRAM </p>
       </nav>
     </footer>
       </body>
