@@ -24,13 +24,13 @@
         <div class="logo">
           <a class="navbar-brand" href="#">
             <%#= fa_stacked_icon "camera inverse", base: "circle"%>
-            Instagram
+            <%= link_to "Instagram", root_path, class: "navbar-brand"  %>
           </a>
         </div>
         <div class="m-auto">
-          <form class="form-inline search-form">
-            <input class="form-control mr-sm-2" type="search" placeholder="@search" aria-label="Search">
-          </form>
+          <%= form_with url: search_path, method: :get, local: true, class: 'form-inline search-form' do |form| %>
+            <%= form.text_field :query, value: params[:query], class: 'form-control mr-sm-2', placeholder: '#search' %>
+          <% end %>
         </div>
         <div class="user-section">
           <a><i class="fa fa-compass"></i></a>
