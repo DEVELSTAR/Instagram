@@ -24,7 +24,6 @@ class Post < ApplicationRecord
     errors.add(:image, "can't be blank") unless image.attached?
   end
 
-
-
+  has_many :comments, dependent: :destroy
 
 end

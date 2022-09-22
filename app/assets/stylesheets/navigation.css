@@ -8,8 +8,8 @@
      padding-left: 15px;
 }
  .user-section i.fa {
-     font-size: 22px;
-     color: #000 d4;
+     font-size: 25px;
+     color: #000;
 }
  .search-form input {
      font-size: 13px;
@@ -31,3 +31,10 @@
      color: #999;
 }
  
+.user-section span{
+    margin-left: 10px;
+    cursor: pointer;
+}
+.user-section i.drp-pr{
+    margin-right: 10px;
+}

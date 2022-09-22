@@ -25,19 +25,22 @@
    display: flex;
 }
  .posts .post .user .avatar {
-   width: 30px;
+   width: 40px;
+   height: 40px;
    margin: 8px;
 }
  .posts .post .user .avatar img {
    width: 100%;
    border: 1px solid #efefef;
    border-radius: 50%;
+   height: 100%;
 }
  .posts .post .user .username {
    padding-top: 13px;
    color: #262626;
-   font-size: 14px;
+   font-size: 20px;
    font-weight: 600;
+    text-decoration: none;
 }
  .posts .post .main-image {
    width: 100%;
@@ -45,6 +48,7 @@
 }
  .posts .post .description {
    padding: 20px;
+   overflow: auto;
 }
 
 /* pagination */
@@ -85,8 +89,9 @@
  .post-show .user .username {
    padding-top: 15px;
    color: #262626;
-   font-size: 14px;
+   font-size: 20px;
    font-weight: 600;
+   text-decoration: none;
 }
  .post-show .user .username:hover {
    text-decoration: none;
@@ -102,4 +107,39 @@
    font-size: 15px;
    text-decoration: underline;
 }
- 
+.desc-comment{
+  height: 81%;
+}
+/* comment-form  */
+.comments-avatar{
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    height: 30px;
+}
+
+.comment{
+    /*border: 2px solid red;*/
+}
+.description{
+    height: 145px;
+    property: overflow,
+}
+.comment-time{
+    font-size: 12px;
+    margin-left: 50px;
+}
+.comment-form{
+  /*display: flex;*/
+  padding-top: 3px;
+  border-top: 2px solid whitesmoke;
+
+}
+.comment-form .body{
+  width: 75%;
+  border-color: transparent;
+}
+.comment-form .body:focus-visible{
+  border-color: transparent;
+}
+

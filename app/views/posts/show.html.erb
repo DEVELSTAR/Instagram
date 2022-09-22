@@ -1,31 +1,48 @@
 <div class="post-show row">
   <div class="col-md-8">
-    <%=image_tag @post.image, class: 'image' %>
+    <a href="<%= user_path %>"> <%=image_tag @post.image, class: 'image' %></a>
   </div>
+
   <div class="col-md-4">
     <div class="user">
       <div class="avatar">
         <% if @post.user.avatar.attached? %>
           <%= link_to user_path(@post.user) do %>
-            <%= image_tag @post.user.avatar %>
+           <%= image_tag @post.user.avatar %>
           <% end %>
         <% end %>
       </div>
-      <%= link_to @post.user.username, user_path(@post.user), class: 'username' %>
+      <%= link_to @post.user.username, user_path(@post.user), class: "username" %>
     </div>
-    <div class="description">
-      <% post.description.to_s.split(' ').each do |word| %>
-        <% if word.start_with?('#') %>
-          <%= link_to word, search_path(query: word) %>
-        <%else %>
-          <%= word %>
-        <%end %>
-      <% end %>
-    </div>
-    <div class="delete">
-      <% if current_user.posts.exists?(@post.id) %>
-        <%= link_to 'Remove', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-    </div>
+    <div class="desc-comment">
+      <div class="description">
+        <% @post.description.to_s.split(' ').each do |word| %>
+          <% if word.start_with?('#') %>
+            <%= link_to word, search_path(query: word) %>
+          <%else %>
+            <%= word %>
+          <%end %>
+        <% end %>
+      </div>
+        <div class="comment">
+          <% @post.comments.each do |comment| %>
+            <%= image_tag comment.user.avatar, class: "comments-avatar" %>
+           <b><%= comment.user.username%></b>
+            <%= comment.body %>
+          <p class="comment-time"><%= time_ago_in_words(comment.created_at) %></p>
+          <% end %>
+        </div>
+      </div>
+      <div class="comment-form "> 
+        <%= form_with(model: [@post]) do |f| %>
+          <%= f.text_field :body, class: "body", placeholder: "Add a comment..." %>
+          <%= f.submit "Post", class: "btn" %>
+        <% end %>
+      </div>
+<!--     <div class="delete">
+      <%# if current_user.posts.exists?(@post.id) %>
+        <%#= link_to 'Remove', post_path(@post),  data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+      <%# end %>
+    </div> -->
   </div>
 </div>
