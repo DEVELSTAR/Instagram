@@ -8,12 +8,16 @@
      padding-left: 15px;
 }
  .user-section i.fa {
-     font-size: 25px;
+     font-size: 27px;
      color: #000;
+}
+.user-section i.fa:hover{
+    color: blueviolet;
 }
  .search-form input {
      font-size: 13px;
      text-align: center;
+}
 }
  .footer {
      font-size: 12px;

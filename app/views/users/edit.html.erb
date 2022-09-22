@@ -20,7 +20,14 @@
           </div>
           <div class="col-sm-9">
             <p class="username"><%=current_user.username %></p>
-            <a class="change-photo" href="">Change Profile Photo</a>
+            <a class="change-photo" href="<%= f.file_field :avatar%>">Change Profile Photo</a>
+            <a href=""></a>
+          </div>
+        </div>
+        <div class="form-group row">
+          <%= f.label :avatar, class: 'col-sm-3 col-form-label' %>
+          <div class="col-sm-9">
+            <%= f.file_field :avatar, class: 'form-control' %>
           </div>
         </div>
         <div class="form-group row">
@@ -63,12 +70,6 @@
           <%= f.label :gender, class: 'col-sm-3 col-form-label' %>
           <div class="col-sm-9">
             <%= f.text_field :gender, class: 'form-control' %>
-          </div>
-        </div>
-        <div class="form-group row">
-          <%= f.label :avatar, class: 'col-sm-3 col-form-label' %>
-          <div class="col-sm-9">
-            <%= f.file_field :avatar, class: 'form-control' %>
           </div>
         </div>
         <div class="form-group row">
