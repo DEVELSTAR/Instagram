@@ -1,0 +1,91 @@
+/* show  */
+.post-show {
+   margin: 30px 5px 0;
+   border: 1px solid #dbdbdb;
+   height: 80vh;
+}
+ .post-show .col-md-8 {
+   padding: 0;
+   height: 80vh;
+}
+ .post-show .col-md-8 .image {
+   width: 100%;
+   object-fit: cover;
+   /*border: 2px solid red;*/
+   height: 100%;
+
+}
+.post-show-desc{
+  padding: 0;
+  height: 80vh;
+}
+ .post-show .user {
+   display: flex;
+   /*padding: 10px 0;*/
+   height: 9%;
+   border-bottom: 1px solid #efefef;
+   /*border: 2px solid red;*/
+}
+ .post-show .user .avatar {
+   width: 50px;
+   height: 50px;
+   margin: 10px;
+}
+ .post-show .user .avatar img {
+   width: 100%;
+   height: 100%;
+   border: 1px solid #efefef;
+   border-radius: 50%;
+}
+ .post-show .user .username {
+   margin-top: 20px;
+   margin-left: 15px;
+   color: #262626;
+   font-size: 20px;
+   font-weight: 500;
+   text-decoration: none;
+}
+
+.show-desc-comments{
+  /*border: 2px solid red;*/
+  height: 84.5%;
+  padding-left: 10px;
+}
+.show-description{
+  margin: 10px 0;
+  margin-right: 10px;
+  max-height: 80%;
+  /*border: 2px solid red;*/
+  overflow: auto;
+}
+.show-comments{
+  overflow: auto;
+  /*border: 2px solid red;*/
+}
+.comments-avatar{
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    height: 30px;
+}
+.show-comment-form{
+  padding-left: 10px;
+  border-top: 2px solid whitesmoke;
+  /*border: 2px solid red;  */
+}
+.show-comment-form .body{
+  width: 75%;
+  border-color: transparent;
+  border: none;
+}
+.show-comment-form .btn{
+  border: none;
+}
+/*.delete {
+   padding-top: 20px;
+}
+ .delete a {
+   font-size: 15px;
+   text-decoration: underline;
+}
+*/

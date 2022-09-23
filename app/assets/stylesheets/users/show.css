@@ -2,6 +2,7 @@
      width: 140px;
      height: 140px;
      margin: 40px auto;
+     border: 2px solid red;
 }
  .profile .avatar .wrapper img {
      width: 100%;
@@ -36,8 +37,7 @@
      padding-left: 0;
      /*border: 2px solid red;*/
      width: 70%;
-     margin: 30px 0;
-     /*border: 2px solid red;*/
+     margin: 40px 0;
 }
  .profile .basic-info ul.posts > li {
      display: inline;
@@ -51,13 +51,13 @@
      font-weight: 600;
 }
  .profile .basic-info .name {
-     font-size: 15px;
-     font-weight: 600;
+     font-size: 22px;
+     font-weight: 500;
 }
  .profile .basic-info .website {
      color: #003569;
      text-decoration: none;
-     font-size: 15px;
+     font-size: 17px;
      font-weight: 600;
 }
  
@@ -102,71 +102,5 @@
      height: 100%;
      border-radius: 4%;
 }
- 
-/*################ edit ####################*/
-.user-edit-page {
-     display: flex;
-     margin-top: 60px;
-     min-height: 500px;
-}
- .user-edit-page .actions {
-     width: 220px;
-     border: 1px solid #dbdbdb;
-}
- .user-edit-page .details {
-     flex: 1;
-     border: 1px solid #dbdbdb;
-     border-left: none;
-}
-.actions {
-     width: 220px;
-     border: 1px solid #dbdbdb;
-}
- .actions .nav-link {
-     font-size: 14px;
-     background-color: white;
-     color: black;
-     border-radius: 0;
-     padding: 12px 0 12px 30px;
-}
- .actions .nav-link:hover {
-     cursor: pointer;
-}
- .actions .nav-pills .nav-link.active {
-     border-left: 2px solid;
-     font-weight: 600;
-}
-.form-edit-user {
-     padding: 30px 100px 10px 50px;
-}
- .form-edit-user .form-group, .form-edit-user input {
-     font-size: 14px;
-     color: black;
-     margin-bottom: 5px;
-}
- .form-edit-user input, .form-edit-user textarea {
-     border: 1px solid #efefef;
-}
- .form-edit-user .col-form-label {
-     text-align: right;
-     font-weight: 600;
-}
- .form-edit-user .avatar {
-     height: 38px;
-     width: 38px;
-     border-radius: 50%;
-}
- .form-edit-user .username {
-     font-size: 20px;
-     line-height: 22px;
-     margin-bottom: 0;
-}
- .form-edit-user .change-photo {
-     color: #3897f0;
-     text-decoration: none;
-     font-size: 13px;
-}
- .form-edit-user input[type='submit'] {
-     color: white;
-}
+
 

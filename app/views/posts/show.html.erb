@@ -3,7 +3,7 @@
     <a href="<%= user_path %>"> <%=image_tag @post.image, class: 'image' %></a>
   </div>
 
-  <div class="col-md-4">
+  <div class="post-show-desc col-md-4">
     <div class="user">
       <div class="avatar">
         <% if @post.user.avatar.attached? %>
@@ -14,8 +14,8 @@
       </div>
       <%= link_to @post.user.username, user_path(@post.user), class: "username" %>
     </div>
-    <div class="desc-comment">
-      <div class="description">
+    <div class="show-desc-comments">
+      <div class="show-description">
         <% @post.description.to_s.split(' ').each do |word| %>
           <% if word.start_with?('#') %>
             <%= link_to word, search_path(query: word) %>
@@ -24,16 +24,16 @@
           <%end %>
         <% end %>
       </div>
-        <div class="comment">
-          <% @post.comments.each do |comment| %>
-            <%= image_tag comment.user.avatar, class: "comments-avatar" %>
-           <b><%= comment.user.username%></b>
-            <%= comment.body %>
-          <p class="comment-time"><%= time_ago_in_words(comment.created_at) %></p>
-          <% end %>
-        </div>
+      <div class="show-comments">
+        <% @post.comments.each do |comment| %>
+          <%= image_tag comment.user.avatar, class: "comments-avatar" %>
+         <b><%= comment.user.username%></b>
+          <%= comment.body %>
+        <p class="comment-time"><%= time_ago_in_words(comment.created_at) %></p>
+        <% end %>
       </div>
-      <div class="comment-form "> 
+    </div>
+      <div class="show-comment-form"> 
         <%= form_with(model: [@post]) do |f| %>
           <%= f.text_field :body, class: "body", placeholder: "Add a comment..." %>
           <%= f.submit "Post", class: "btn" %>

@@ -1,0 +1,11 @@
+/* create */
+.form-upload {
+   border: 1px solid #dbdbdb;
+   height: auto;
+   margin: 200px 160px;
+   padding: 30px;
+   border-radius: 3px;
+}
+ .form-upload input[type='text'] {
+   width: 100%;
+}

@@ -1,0 +1,82 @@
+
+/*  index  */
+.posts {
+   margin: 50px 180px 10px;
+}
+ .posts .post {
+   border: 1px solid #efefef;
+   margin: 60px 0;
+   border-radius: 3px;
+}
+ .posts .post .user {
+   border-bottom: 1px solid #efefef;
+   display: flex;
+}
+ .posts .post .user .avatar {
+   width: 40px;
+   height: 40px;
+   margin: 8px;
+}
+ .posts .post .user .avatar img {
+   width: 100%;
+   border: 1px solid #efefef;
+   border-radius: 50%;
+   height: 100%;
+}
+ .posts .post .user .username {
+   padding-top: 13px;
+   color: #262626;
+   font-size: 20px;
+   font-weight: 600;
+    text-decoration: none;
+}
+ .posts .post .main-image {
+   width: 100%;
+   border-bottom: 1px solid #f4f4f4;
+}
+
+
+/* pagination */
+.homepage{
+  [...]
+}
+.pagination span{
+      padding-right: 10px;
+}
+/*desc-comments*/
+
+
+
+.index-desc-comments{
+  height: 81%;
+
+}
+.description {
+   padding: 20px;
+   overflow: auto;
+}
+.comment{
+    /*border: 2px solid red;*/
+}
+.description{
+    height: 145px;
+    property: overflow,
+}
+.comment-time{
+    font-size: 12px;
+    margin-left: 50px;
+}
+.comment-form{
+  /*display: flex;*/
+  padding-top: 3px;
+  border-top: 2px solid whitesmoke;
+
+}
+.comment-form .body{
+  width: 75%;
+  border-color: transparent;
+}
+.comment-form .body:focus-visible{
+  border-color: transparent;
+}
+
