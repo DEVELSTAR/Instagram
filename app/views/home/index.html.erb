@@ -14,12 +14,15 @@
 	  <a href="<%= post_path(post) %>"><%= image_tag post.image, class: 'main-image' %></a>
 	  <div class="index-desc_comments">
 	  	<div class="index-description">
+	  		<strong><%= post.user.username %></strong>
 		    <%= post.description %>	
 		    <br>      
 		  </div>
 	    <div class="index-comments">
 		    <% if post.comments.present? %>
-		   	    <%= link_to "View comment", post_path(post) %>
+		   	  <%= link_to "View comment", post_path(post) %>
+		   	<% else %>
+		   	  <%= link_to "Comment", post_path(post) %>
 		    <% end %>
 	    </div>
 	  </div>

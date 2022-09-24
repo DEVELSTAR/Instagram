@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get 'search' => 'search#index'
 
   resources :users, only: [:show, :edit, :update]
-  resources :posts, only: [:new, :create, :show, :destroy]
+
+  resources :posts do
+    resources :comments
+  end
 
 end

@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
 	
 	def show
 	  @post = Post.find(params[:id])
+	  @comments = @post.comments.order(created_at: :desc)
 	end
 
 	def create
@@ -18,7 +20,7 @@ class PostsController < ApplicationController
 	private
 	
 	def post_params
-	  params.require(:post).permit(:description, :image, :user_id)
+	  params.require(:post).permit(:description, :image, :user_id, :comment_id)
 	end
 
 end

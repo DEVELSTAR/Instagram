@@ -27,14 +27,19 @@
       <div class="show-comments">
         <% @post.comments.each do |comment| %>
           <%= image_tag comment.user.avatar, class: "comments-avatar" %>
-         <b><%= comment.user.username%></b>
-          <%= comment.body %>
-        <p class="comment-time"><%= time_ago_in_words(comment.created_at) %></p>
+          <b><%= comment.user.username%></b>
+              <%= comment.body %>
+        <p class="comment-time">
+          <%= time_ago_in_words(comment.created_at) %>
+          <% if comment.user == current_user %>
+            <%= link_to "delete", @comment , data: {turbo_method: :delete} , class: "comment-time" %>
+          <% end %>
+        </p>
         <% end %>
       </div>
     </div>
       <div class="show-comment-form"> 
-        <%= form_with(model: [@post]) do |f| %>
+        <%= form_with(model: [@post, @post.comments.build]) do |f| %>
           <%= f.text_field :body, class: "body", placeholder: "Add a comment..." %>
           <%= f.submit "Post", class: "btn" %>
         <% end %>

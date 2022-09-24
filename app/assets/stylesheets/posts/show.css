@@ -60,6 +60,7 @@
 }
 .show-comments{
   overflow: auto;
+  height: 25%;
   /*border: 2px solid red;*/
 }
 .comments-avatar{
