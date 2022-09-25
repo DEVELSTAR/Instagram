@@ -47,31 +47,32 @@
 
 
 
-.index-desc-comments{
-  height: 81%;
+/*.index-desc-comments{}*/
+.index-description {
+   height: 1.7rem;
+   /*border: 2px solid red;*/
+   display: flex;
+}
+.text-truncate{
+  max-width: 400px;
+  /*border: 2px solid red;*/  
 
 }
-.description {
-   padding: 20px;
-   overflow: auto;
-}
-.comment{
+.index-comments{
     /*border: 2px solid red;*/
+    margin-top: 1rem;
 }
-.description{
-    height: 145px;
-    property: overflow,
+.index-comments a{
+  text-decoration: none;
+  color: #a6a6a6;
 }
+
 .comment-time{
     font-size: 12px;
     margin-left: 50px;
+    color: #a6a6a6;
 }
-.comment-form{
-  /*display: flex;*/
-  padding-top: 3px;
-  border-top: 2px solid whitesmoke;
 
-}
 .comment-form .body{
   width: 75%;
   border-color: transparent;
@@ -80,3 +81,40 @@
   border-color: transparent;
 }
 
+/* icons */
+.index-icons-main{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.index-icons-main i{
+  color: black;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.index-likes{
+  margin: 1rem 0 1rem 0;
+}
+.index-comment-form{
+  padding-left: 10px;
+  border-top: 2px solid whitesmoke;
+  margin-top: 1rem;
+  height: 60px;
+}
+.index-comment-form .body{
+  width: 85%;
+  border: none;
+  font-size: 1rem;
+  margin-top: 15px;
+}
+.index-comment-form .btn{
+  font-size: 23px;
+  color: #809fff;
+}
+.index-post-time{
+  margin: 1rem 0 1rem 0;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #a6a6a6;
+}

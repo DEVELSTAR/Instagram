@@ -15,14 +15,34 @@
       <%= link_to @post.user.username, user_path(@post.user), class: "username" %>
     </div>
     <div class="show-desc-comments">
-      <div class="show-description">
-        <% @post.description.to_s.split(' ').each do |word| %>
-          <% if word.start_with?('#') %>
-            <%= link_to word, search_path(query: word) %>
-          <%else %>
-            <%= word %>
-          <%end %>
-        <% end %>
+    <%#= @post.likes.count %>
+    <%# like = current_user.likes.find_by(post: @post) %>
+    <%# if like.nil? %>
+       <%#= button_to "Like", likes_path, params: { like: {post_id: @post.id}}, method: :post %>
+    <%# else %>
+       <%#= button_to "Unlike", like_path(like), method: :delete %>
+    <%# end %>
+    <div class="show-description">
+      <div class="show-desc-avt">
+        <div>
+          <div class="avatar2">
+            <% if @post.user.avatar.attached? %>
+              <%= link_to user_path(@post.user) do %>
+               <%= image_tag @post.user.avatar %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div class="show-description2">
+          <%= link_to @post.user.username, user_path(@post.user), class: 'username2' %>
+          <% @post.description.to_s.split(' ').each do |word| %>
+            <% if word.start_with?('#') %>
+              <%= link_to word, search_path(query: word) %>
+            <%else %>
+              <%= word %>
+            <%end %>
+          <% end %>
+        </div>        
       </div>
       <div class="show-comments">
         <% @post.comments.each do |comment| %>
@@ -30,12 +50,23 @@
           <b><%= comment.user.username%></b>
               <%= comment.body %>
         <p class="comment-time">
-          <%= time_ago_in_words(comment.created_at) %>
+          <%= time_ago_in_words(comment.created_at) %> ago
           <% if comment.user == current_user %>
             <%= link_to "delete", @comment , data: {turbo_method: :delete} , class: "comment-time" %>
           <% end %>
         </p>
         <% end %>
+      </div>
+    </div>
+      <div class="show-icons-main">
+        <div>
+          <a href="<%= root_path %>"><i class="fa-regular fa-heart fa-index fa-2x"></i></a>
+          <a href="<%= root_path %>"><i class="fa-regular fa-comment fa-index fa-2x"></i></a>
+          <a href="<%= root_path %>"><i class="fa-sharp fa-solid fa-share fa-2x"></i></a>
+        </div>
+        <div>
+          <a href="<%= root_path %>"><i class="fa-regular fa-bookmark fa-2x"></i></a>
+        </div>
       </div>
     </div>
       <div class="show-comment-form"> 

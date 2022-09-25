@@ -12,21 +12,56 @@
 		  <%= link_to post.user.username, user_path(post.user), class: 'username' %>
 		</div>
 	  <a href="<%= post_path(post) %>"><%= image_tag post.image, class: 'main-image' %></a>
-	  <div class="index-desc_comments">
+		  <div class="index-icons-main">
+		  	<div>
+		  		<a href="<%= root_path %>"><i class="fa-regular fa-heart fa-index fa-2x"></i></a>
+          <a href="<%= root_path %>"><i class="fa-regular fa-comment fa-index fa-2x"></i></a>
+		  		<a href="<%= root_path %>"><i class="fa-sharp fa-solid fa-share fa-2x"></i></a>
+		  	</div>
+		  	<div>
+		  		<a href="<%= root_path %>"><i class="fa-regular fa-bookmark fa-2x"></i></a>
+		  	</div>
+		  </div>
+		  <div class="index-likes container">
+		  	<%=  @sum = post.likes.count %>
+		  	<% if @sum > 1 %>
+		  	  <span><strong>likes</strong></span>
+		  	<% else %>
+		  	  <span><strong>like</strong></span>
+		  	<% end %>
+		    <% like = current_user.likes.find_by(post: post) %>
+		    <% if like.nil? %>
+		       <%= button_to "Like", likes_path, params: { like: {post_id: post.id}}, method: :post %>
+		    <% else %>
+		       <%= button_to "Unlike", like_path(like), method: :delete %>
+		    <% end %>
+		  </div>
+	  <div class="container">
 	  	<div class="index-description">
-	  		<strong><%= post.user.username %></strong>
-		    <%= post.description %>	
-		    <br>      
+	  		<div class="">
+	  		  <strong><%= post.user.username %></strong>
+	  		          <%= post.description.truncate(50, omission: '...more' ) %>	
+	  		</div>
+	  		<!-- <div><span>More</span></div> -->
 		  </div>
 	    <div class="index-comments">
 		    <% if post.comments.present? %>
-		   	  <%= link_to "View comment", post_path(post) %>
-		   	<% else %>
-		   	  <%= link_to "Comment", post_path(post) %>
+		      <% @c = post.comments.count  %>
+		      <% if @c > 1 %>
+		        <a href="<%= post_path(post) %>">View all <%= post.comments.count %> comments</a>
+		      <% else %>
+		        <a href="<%= post_path(post) %>">View 1 comment</a>
+		   	  <% end %>
 		    <% end %>
 	    </div>
+	    <div class="index-post-time"><%= time_ago_in_words(post.created_at) %> ago</div>
 	  </div>
-
+    <div class="index-comment-form"> 
+      <%= form_with(model: [post, post.comments.build]) do |f| %>
+        <%= f.text_field :body, class: "body", placeholder: "Add a comment..." %>
+        <%= f.submit "Post", class: "btn" %>
+      <% end %>
+    </div>
 	</section>
   <% end %>
   <%= paginate @posts %>
