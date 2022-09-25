@@ -11,15 +11,21 @@
       <div class="user-wrapper">
         <h2 class="username"><%= @user.username %></h2>
         <% if @user == current_user %>
-          <a class="edit-profile" href="<%= edit_user_path(current_user) %>">
-            <button>Edit Profile</button>
-          </a>
-          <% end %>  
+          <%= link_to "Edit Profile", edit_user_path(current_user), class: "edit-profile" %>
+        <% elsif current_user.followees.include?(@user) %>
+            <h5><%= button_to "Unfollow", unfollow_user_path, method: "POST", class: "follow" %></h5>
+        <% else %>
+            <h5><%= button_to "Follow", follow_user_path, method: "POST", class: "follow" %></h5>
+        <% end %>
       </div>
+
+    <%#= link_to 'Followers', user_followers_path(@user) %>
+    <%#= link_to 'Following', user_followees_path(@user) %>
+
       <ul class="posts">
         <li><span><%= @posts.count %></span> posts</li>
-        <li><span>483M</span> followers</li>
-        <li><span>5</span> following</li>
+        <li><span><%= @user.followers.count %></span> followers</li>
+        <li><span><%= @user.followees.count %></span> following</li>
       </ul>
       <h2 class="name"><%= @user.name %></h2>
         <%=link_to @user.website, @user.website, class:  'website' %>
