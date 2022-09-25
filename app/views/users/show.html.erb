@@ -3,24 +3,26 @@
     <div class="col-md-4 avatar">
       <div class="wrapper">
         <% if current_user.avatar.attached? %>
-          <%= image_tag current_user.avatar %>
+          <%= image_tag @user.avatar %>
         <%end %>
       </div>
     </div>
     <div class="col-md-8 basic-info">
       <div class="user-wrapper">
-        <h2 class="username"><%= current_user.username %></h2>
+        <h2 class="username"><%= @user.username %></h2>
+        <% if @user == current_user %>
           <a class="edit-profile" href="<%= edit_user_path(current_user) %>">
             <button>Edit Profile</button>
           </a>
+          <% end %>  
       </div>
       <ul class="posts">
         <li><span><%= @posts.count %></span> posts</li>
         <li><span>483M</span> followers</li>
         <li><span>5</span> following</li>
       </ul>
-      <h2 class="name"><%= current_user.name %></h2>
-        <%=link_to current_user.website, current_user.website, class:  'website' %>
+      <h2 class="name"><%= @user.name %></h2>
+        <%=link_to @user.website, @user.website, class:  'website' %>
     </div>
   </div>
 </div>

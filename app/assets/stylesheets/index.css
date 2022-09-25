@@ -118,3 +118,7 @@
   font-size: 13px;
   color: #a6a6a6;
 }
+
+input{
+  outline: none;
+}
