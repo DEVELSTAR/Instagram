@@ -1,3 +1,16 @@
+<div class="status">
+	<% @users.each do |u| %>
+		<div class="img-box">
+			<div><% if u.avatar.attached? %>
+	      <%= link_to status_path(@status) do %>
+	        <%= image_tag u.avatar, class: "status-img" %>
+	        <% end %>
+	    <% end %></div>
+	    <div><%= u.username %></div>
+	  </div>
+	<% end %>
+</div>
+
 <div class="posts">
   <% @posts.each do |post| %>
 	<section class="post">

@@ -18,5 +18,7 @@ class User < ApplicationRecord
 
   validates :user_name, uniqueness: { case_sensitive: true }
   validates :user_name, presence: true
+   
 
+  has_many :statuses
 end

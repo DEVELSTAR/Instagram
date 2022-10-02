@@ -1,0 +1,22 @@
+.status-show{
+	height: 80vh;
+	width: 600px;
+	margin: auto;
+	margin-top: 6rem;
+	/*border: 2px solid red;*/
+}
+.status-show strong{
+	font-size: 2rem;
+	font-family: arial, sans-serif;
+	/*height: 10%;*/
+	/*border: 2px solid red;*/
+	height: 10%;
+}
+.status-show strong:hover{
+	color: blueviolet;
+}
+.show-status-img{
+	width: 100%;
+	/*margin-top: 2rem;*/
+	height: 80%;
+}
