@@ -14,6 +14,7 @@
             <%= form.text_field :query, value: params[:query], class: 'form-control mr-sm-2', placeholder: '#search' %>
           <% end %>
         </div>
+        <%= render 'layouts/notifications' %>
         <div class="user-section">
           <a href="<%= root_path %>"><i class="fa-sharp fa-solid fa-house fa"></i></a>
           <a href=""><i class="fa-solid fa-comment-dots fa"></i></a>
@@ -22,7 +23,6 @@
             <i class="fa-solid fa-circle-plus fa"></i>
           </a>
           <a><i class="fa fa-compass"></i></a>
-          <a><i class="fa fa-heart"></i></a>
           <span class="dropdown ">
             <i class="fa fa-user" data-bs-toggle="dropdown"></i>
             <ul class="dropdown-menu">

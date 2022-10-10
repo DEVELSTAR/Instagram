@@ -76,3 +76,4 @@ gem 'kaminari'
 group :production do 
   gem 'pg'
 end
+gem "noticed", "~> 1.6"
