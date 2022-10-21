@@ -6,5 +6,6 @@
 .notifications li{
 	border: none;
 	list-style: none;
+	cursor: pointer;
 
 }
